@@ -1,0 +1,73 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage[all]{xy}
+
+
+\usepackage{amsmath,amsthm,amssymb,color,latexsym}
+\usepackage{geometry}        
+\geometry{letterpaper}    
+\usepackage{graphicx}
+
+\newtheorem{problem}{}
+
+\newenvironment{solution}[1][\it{Solution}]{\textbf{#1. } }{$\square$}
+
+
+\begin{document}
+\noindent Data Science for Economist section Spring 2024\hfill Problem Set \#2.\\
+Emilien Akotenou. (Ph.D Student, OU)
+
+\hrulefill
+
+
+\begin{section}{Big data tools}
+Measurement
+Statistical programming languages
+Visualization tools (usually included with the above)
+Big Data management software
+Data collection tools
+
+\begin{subsection}{Measurement }
+   
+\end{subsection} 
+\begin{subsection}{Statistical programming languages}
+Three main programming languages are widely used for data manipulation, analysis:R, Python and Julia.  
+\end{subsection} 
+\begin{subsection}{Data collection, Cleaning and Preprocessing}
+Web Scraping can be done in almost any programming language out there
+Handling large data sets with RDD.  To use RDDs you need a cluster of computers and software such as Hadoop or Spark. \newline
+ OpenRefine: Tool for cleaning and transforming data. \newline
+scikit-learn, caret: Libraries for data preprocessing in machine learning.  
+\end{subsection} 
+\begin{subsection}{Version Control}
+Git and GitHub: Distributed version control system.   
+\end{subsection} 
+\begin{subsection}{Cloud Computing Platforms}
+AWS, Azure, Google Cloud: Cloud platforms that provide scalable computing resources.   
+\end{subsection}
+
+\begin{subsection}{Data Manipulation and Analysis}
+Pandas: Python library for data manipulation and analysis. \newline
+NumPy: Fundamental package for scientific computing with Python. \newline
+dplyr: R package for data manipulation and transformation.  \newline
+SQL : To transform data into a more usable form for statistical software to use. With SQL, one can easily subset, merge, and perform other common data transformations.
+\end{subsection}
+
+\begin{subsection}{Data Visualization}
+Allows humans to see in multiple dimensions what the data looks like, spot outliers, and otherwise perform "sanity checks" on the data. \newline
+Matplotlib: Python 2D plotting library. \newline
+ggplot2: package included in the R tidyverse for creating complex and customizable plots.
+\end{subsection}
+
+\begin{subsection}{Modeling}
+The main objectives of statistical modeling are as follows: \newline
+Use the data to test theories. \newline
+Use the data to predict behavior. \newline
+Use the data to explain behavior. 
+\end{subsection}
+
+\end{section}
+
+
+ 
+\end{document}
