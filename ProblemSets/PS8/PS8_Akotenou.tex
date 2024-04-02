@@ -1,0 +1,67 @@
+\documentclass{article}
+
+% Language setting
+% Replace `english' with e.g. `spanish' to change the document language
+\usepackage[english]{babel}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{siunitx}
+\newcolumntype{d}{S[
+    input-open-uncertainty=,
+    input-close-uncertainty=,
+    parse-numbers = false,
+    table-align-text-pre=false,
+    table-align-text-post=false
+ ]}
+
+% Set page size and margins
+% Replace `letterpaper' with `a4paper' for UK/EU standard size
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+
+% Useful packages
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+
+\title{PS8 DScourse 2024}
+\author{Emilien Akotenou}
+
+\begin{document}
+\maketitle
+
+
+
+
+\section{Comparison of Estimated Coefficients and Ground Truth}
+
+The OLS estimates obtained using the \texttt{lm()} function in R are very close to the "truth"  given $\beta$ values used to generate the data. The table below shows the estimated coefficients alongside the true values:
+
+\begin{center}
+\begin{tabular}{ccc}
+\hline
+Coefficient & Estimated Value & True Value \\
+\hline
+$\beta_1$ & 1.500 & 1.5 \\
+$\beta_2$ & -1.000 & -1.0 \\
+$\beta_3$ & -0.250 & -0.25 \\
+$\beta_4$ & 0.750 & 0.75 \\
+$\beta_5$ & 3.500 & 3.5 \\
+$\beta_6$ & -2.000 & -2.0 \\
+$\beta_7$ & 0.500 & 0.5 \\
+$\beta_8$ & 1.000 & 1.0 \\
+$\beta_9$ & 1.250 & 1.25 \\
+$\beta_{10}$ & 2.000 & 2.0 \\
+\hline
+\end{tabular}
+\end{center}
+
+As we can see, the estimated coefficients are nearly identical to the true values, with differences only appearing beyond the third decimal place. This demonstrates that the OLS estimation procedure accurately recovers the underlying parameters used to generate the data.
+
+\includegraphics{regression_output}
+
+The regression output confirms the similarity between the estimated coefficients and the true values. The standard errors are small relative to the coefficient magnitudes, indicating precise estimates. The t-values are large and the p-values are near zero, providing strong evidence that the estimated coefficients are statistically significant.
+
+Overall, these results validate the correctness of the code used to generate the data and estimate the coefficients, and showcase the effectiveness of OLS in recovering the true underlying parameters in this simulated data setting.
+
+\end{document}
