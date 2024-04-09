@@ -1,0 +1,48 @@
+\documentclass{article}
+
+% Language setting
+% Replace `english' with e.g. `spanish' to change the document language
+\usepackage[english]{babel}
+\usepackage{float}
+\usepackage{booktabs}
+\usepackage{siunitx}
+\newcolumntype{d}{S[
+    input-open-uncertainty=,
+    input-close-uncertainty=,
+    parse-numbers = false,
+    table-align-text-pre=false,
+    table-align-text-post=false
+ ]}
+
+% Set page size and margins
+% Replace `letterpaper' with `a4paper' for UK/EU standard size
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+\usepackage{listings}
+\usepackage{hyperref}
+% Useful packages
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+
+\title{PS9 DScourse 2024}
+\author{Emilien Akotenou}
+
+\begin{document}
+\maketitle
+\section*{Problem Set 9 Solution}
+
+\subsection*{Question 7}
+The dimension of the training data is 404 rows and 14 columns, after preprocessing is 404 rows and 75 columns. There are 61 more X variables compared to the original housing data, which had 14 columns.
+
+\subsection*{Question 8}
+The optimal value of $\lambda$ for the LASSO model is \texttt{0.0373}. The in-sample RMSE is \texttt{0.413}, and the out-of-sample RMSE is \texttt{0.39}.
+
+\subsection*{Question 9}
+The optimal value of $\lambda$ for the ridge regression model is \texttt{0.0373}. The in-sample RMSE is \texttt{0.140} and the out-of-sample RMSE is \texttt{0.181}.
+
+\subsection*{Question 10}
+It would not be possible to estimate a simple linear regression model on a data set that had more columns than rows. In such a case, the matrix of predictors would not be of full rank, and the ordinary least squares solution would not be unique. Regularization techniques like LASSO and ridge regression allow us to estimate models in high-dimensional settings where the number of predictors exceeds the number of observations.
+
+Based on the RMSE values of the tuned LASSO and ridge regression models, we can assess where the models stand in terms of the bias-variance trade-off. The LASSO model, which performs variable selection by setting some coefficients to exactly zero, tends to have lower variance but potentially higher bias. On the other hand, the ridge regression model, which shrinks the coefficients towards zero but does not perform variable selection, tends to have lower bias but potentially higher variance. The optimal choice between LASSO and ridge regression depends on the specific characteristics of the data and the relative importance of bias and variance in the prediction task.
+
+\end{document}
