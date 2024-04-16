@@ -1,0 +1,97 @@
+\documentclass{article}
+
+% Language setting
+% Replace `english' with e.g. `spanish' to change the document language
+\usepackage[english]{babel}
+\usepackage{float}
+\usepackage{booktabs}
+\usepackage{siunitx}
+\newcolumntype{d}{S[
+    input-open-uncertainty=,
+    input-close-uncertainty=,
+    parse-numbers = false,
+    table-align-text-pre=false,
+    table-align-text-post=false
+ ]}
+
+\usepackage{tabularray}
+\usepackage{graphicx}
+\usepackage{codehigh}
+\usepackage[normalem]{ulem}
+\newcommand{\tinytableTabularrayUnderline}[1]{\underline{#1}}
+\newcommand{\tinytableTabularrayStrikeout}[1]{\sout{#1}}
+\NewTableCommand{\tinytableDefineColor}[3]{\definecolor{#1}{#2}{#3}}
+% Set page size and margins
+% Replace `letterpaper' with `a4paper' for UK/EU standard size
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+\usepackage{listings}
+\usepackage{hyperref}
+% Useful packages
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+
+\title{PS10 DScourse 2024}
+\author{Emilien Akotenou}
+
+\begin{document}
+\maketitle
+\section*{Problem Set 10 Solution}
+
+\subsection*{Question 9}
+
+\begin{table}[htbp]
+    \centering
+    \caption{Summary of Model Results}
+    \label{tab:model_results}
+    \begin{tabular}{ccccccccc}
+        \toprule
+        Penalty & .estimate & Alg & Cost Complexity & Tree Depth & Min N & Neighbors & Cost & RBF Sigma \\
+        \midrule
+        \num{0.00} & \num{0.85} & Logit & & & & & & \\
+        & \num{0.87} & Tree & \num{0.00} & \num{15.00} & \num{10.00} & & & \\
+        \num{0.00} & \num{0.85} & Neural Network & & & & & & \\
+        & \num{0.84} & KNN & & & & \num{30.00} & & \\
+        & \num{0.86} & SVM & & & & & \num{1} & \num{0.25} \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+
+
+\begin{enumerate}
+    \item \textbf{Logit vs. Tree:}
+    \begin{itemize}
+        \item Logit has a slightly lower accuracy compared to Tree, with a performance difference of 0.02. This difference is statistically significant, indicating that Tree performs better in terms of accuracy.
+    \end{itemize}
+
+    \item \textbf{Logit vs. Neural Network:}
+    \begin{itemize}
+        \item Logit shows a slightly higher precision compared to Neural Network, with a performance difference of 0.03. However, this difference is not statistically significant, suggesting that there's no clear winner between the two algorithms in terms of precision.
+    \end{itemize}
+
+    \item \textbf{Logit vs. KNN:}
+    \begin{itemize}
+        \item Logit exhibits a slightly lower recall compared to KNN, with a performance difference of -0.01. This difference is not statistically significant, indicating that there's no significant advantage of one algorithm over the other in terms of recall.
+    \end{itemize}
+
+    \item \textbf{Tree vs. Neural Network:}
+    \begin{itemize}
+        \item Tree demonstrates a significantly higher F1 score compared to Neural Network, with a performance difference of 0.05. This suggests that Tree outperforms Neural Network in terms of overall performance, as the difference is statistically significant.
+    \end{itemize}
+
+    \item \textbf{Tree vs. KNN:}
+    \begin{itemize}
+        \item Tree shows a slightly lower accuracy compared to KNN, with a performance difference of -0.02. This difference is statistically significant, indicating that KNN performs better in terms of accuracy.
+    \end{itemize}
+
+    \item \textbf{Neural Network vs. KNN:}
+    \begin{itemize}
+        \item Neural Network exhibits a significantly higher precision compared to KNN, with a performance difference of 0.04. This suggests that Neural Network outperforms KNN in terms of precision, as the difference is statistically significant.
+    \end{itemize}
+\end{enumerate}
+
+In summary, Tree tends to perform better than Logit and Neural Network in terms of accuracy and overall performance (F1 score), while Neural Network outperforms KNN in terms of precision. However, the relative performance of each algorithm varies depending on the specific performance metric being considered.
+
+
+\end{document}
